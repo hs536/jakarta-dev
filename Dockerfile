@@ -13,9 +13,7 @@ RUN yum -y update && yum clean all && \
     ln -s /usr/share/zoneinfo/Japan /etc/localtime
 
 # tool setup
-RUN && \
-    # setup jdk
-    GITHUB_REL_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases && \
+RUN GITHUB_REL_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases && \
     VERSION_PATH=`curl -sL ${GITHUB_REL_URL}/latest | grep "OpenJDK11U-jdk_x64_linux_11" | grep "href" | grep -v "sign" | grep -v "debug" | sed -r "s;^.*(/download/)(.*)(\.tar\.gz).*$;\2;"` && \
     curl -sLO "${GITHUB_REL_URL}/download/${VERSION_PATH}.tar.gz" && \
     tar -xzvpf ${VERSION_PATH##*/}.tar.gz && rm -rf ${VERSION_PATH##*/}.tar.gz
