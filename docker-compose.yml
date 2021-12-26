@@ -1,0 +1,14 @@
+version: "3"
+services:
+  build:
+    image: hs536/jakarta-dev:main
+    privileged: true
+    command: /sbin/init
+    volumes:
+      - type: volume
+        source: mydata
+        target: /work
+        volume:
+          nocopy: true
+volumes:
+  mydata:
