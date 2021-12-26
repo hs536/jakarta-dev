@@ -22,7 +22,7 @@ RUN yum install -y which unzip tar wget zip && \
     curl -sLO "${GITHUB_REL_URL}/download/${VERSION_PATH}.tar.gz" && \
     tar -xzvpf ${VERSION_PATH##*/}.tar.gz && rm -rf ${VERSION_PATH##*/}.tar.gz && \
     JDK_DIR_NAME=openjdk-`echo ${VERSION_PATH} | sed -r "s;^.*_linux_(.*)$;\1;"` && \
-    ln -s ${JDK_DIR_NAME} /usr/lib/jvm/jdk11
+    ln -s ${JDK_DIR_NAME} /usr/lib/jvm/jdk11 && \
     java -version
     
 ENV JAVA_HOME /usr/lib/jvm/jdk11
