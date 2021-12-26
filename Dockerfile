@@ -67,7 +67,10 @@ RUN update-ca-trust && \
     useradd -l -r -d /home/developer -u 1000100000 -g root -s /bin/bash developer && \
     mkdir -p /work/developer && chmod 777 -R /work/developer && \
     chown -R developer:root /work/developer
-    
+
+ADD maven/settings.xml /usr/share/maven/conf
+ADD maven/toolchains.xml /usr/share/maven/conf
+
 ENV JAVA_HOME /usr/lib/jvm/jdk11
 ENV MAVEN_HOME /usr/share/maven
 ENV M2_HOME /usr/share/maven
