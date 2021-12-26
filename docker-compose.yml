@@ -5,10 +5,7 @@ services:
     privileged: true
     command: /sbin/init
     volumes:
-      - type: volume
-        source: mydata
-        target: /work
-        volume:
-          nocopy: true
+      - mydata:/work
 volumes:
   mydata:
+    external: false
