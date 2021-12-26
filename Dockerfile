@@ -1,4 +1,4 @@
-FROM krallin/centos-tini
+FROM centos:7
 
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
