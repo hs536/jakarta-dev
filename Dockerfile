@@ -18,8 +18,8 @@ RUN GITHUB_REL_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/r
     curl -sLO "${GITHUB_REL_URL}/download/${VERSION_PATH}.tar.gz" && \
     tar -xzvpf ${VERSION_PATH##*/}.tar.gz && rm -rf ${VERSION_PATH##*/}.tar.gz && \
     JDK_DIR_NAME=openjdk-`echo ${VERSION_PATH} | sed -r "s;^.*_linux_(.*)$;\1;"` && \
-    mkdir -p /usr/lib/jvm/jdk11 && \
-    ln -s ${JDK_DIR_NAME} /usr/lib/jvm/jdk11 && \
+    mkdir -p /usr/lib/jvm && \
+    mv ${JDK_DIR_NAME} /usr/lib/jvm/jdk11 && \
     cp -Lf /etc/pki/java/cacerts /usr/lib/jvm/jdk11/lib/security/cacerts && \
     ln -s /usr/lib/jvm/jdk11/bin/* /bin/ && \
     java -version
