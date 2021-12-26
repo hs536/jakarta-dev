@@ -1,0 +1,11 @@
+<settings>
+    <localRepository>/work/developer/repo</localRepository>
+    <mirrors>
+        <mirror>
+            <mirrorOf>central</mirrorOf>
+            <name>Eclipse Central Proxy</name>
+            <url>https://repo.eclipse.org/content/repositories/maven_central/</url>
+            <id>eclipse.maven.central.mirror</id>
+        </mirror>
+    </mirrors>
+</settings>
