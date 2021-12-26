@@ -7,7 +7,7 @@ ENV LC_ALL en_US.UTF-8
 # system setup
 RUN yum -y update && yum clean all && \
     yum reinstall -y glibc-common && \
-    yum install -y which unzip tar wget zip git && \
+    yum install -y which unzip tar wget zip git vim && \
     yum clean all && \
     unlink /etc/localtime && \
     ln -s /usr/share/zoneinfo/Japan /etc/localtime
