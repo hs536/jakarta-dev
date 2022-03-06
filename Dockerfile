@@ -41,7 +41,8 @@ RUN update-ca-trust && \
     #
     # install maven
     #
-    curl -O https://archive.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.zip && \
+    # curl -O https://archive.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.zip && \
+    curl -O https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.zip && \
     unzip apache-maven-*-bin.zip -d /usr/share && \
     rm apache-maven-*-bin.zip && \
     mv /usr/share/apache-maven-* /usr/share/maven && \
